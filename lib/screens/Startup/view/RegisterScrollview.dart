@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spotifi/screens/Startup/widgets/forms/RegisterPageOneForm.dart';
+import 'package:spotifi/screens/Startup/widgets/forms/RegisterPageTwoForm.dart';
 
 import 'RegisterPageOne.dart';
 import 'RegisterPageThree.dart';
@@ -32,14 +34,16 @@ class RegisterViewStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
-    return PageView(
-      scrollDirection: Axis.horizontal,
-      controller: controller,
-      children: [
-        RegisterPageOne(),
-        RegisterPageTwo(),
-        RegisterPageThree(),
-      ],
+    return Container(
+      child: PageView(
+        scrollDirection: Axis.horizontal,
+        controller: controller,
+        children: [
+          RegisterPageOne(),
+          RegisterPageTwo(),
+          RegisterPageThree(),
+        ],
+      ),
     );
   }
 }

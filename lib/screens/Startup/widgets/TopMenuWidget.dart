@@ -7,7 +7,6 @@ class TopMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.2,
       child: Row(
         children: [
           ButtonNavigationMainStartupPage(),

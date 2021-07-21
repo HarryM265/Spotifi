@@ -1,25 +1,33 @@
 // Create a Form widget.
 import 'package:flutter/material.dart';
 
-class SigninCustomForm extends StatefulWidget {
+class RegisterPageOneCustomForm extends StatefulWidget {
   @override
-  SigninCustomFormState createState() {
-    return SigninCustomFormState();
+  RegisterPageOneCustomFormState createState() {
+    return RegisterPageOneCustomFormState();
   }
 }
 
-class SigninCustomFormState extends State<SigninCustomForm> {
-  final Signin_formKey = GlobalKey<FormState>();
+class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
+  final RegisterOne_formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: Signin_formKey,
+      key: RegisterOne_formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Text('Email:'),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Email';
+              }
+              return null;
+            },
+          ),
+          Text('Email Again:'),
           TextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -37,14 +45,23 @@ class SigninCustomFormState extends State<SigninCustomForm> {
               return null;
             },
           ),
+          Text('Password Again:'),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Password';
+              }
+              return null;
+            },
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: ElevatedButton(
               onPressed: () {
-                if (Signin_formKey.currentState!.validate()) {
+                if (RegisterOne_formKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Submition Complete!'),
+                      content: Text('Storing Data!'),
                     ),
                   );
                 }

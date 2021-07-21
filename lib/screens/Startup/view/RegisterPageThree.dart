@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifi/screens/Startup/widgets/ButtonSubmitRegisterDetails.dart';
 
 class RegisterPageThree extends StatelessWidget {
   const RegisterPageThree({Key? key}) : super(key: key);
@@ -7,8 +8,10 @@ class RegisterPageThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text('Page Three'),
+          Text('Thankyou for joining Spotifi!'),
+          ButtonSubmitRegisterDetails(),
         ],
       ),
     );
