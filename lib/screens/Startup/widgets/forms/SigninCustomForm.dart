@@ -1,14 +1,14 @@
 // Create a Form widget.
 import 'package:flutter/material.dart';
 
-class UsernameCustomForm extends StatefulWidget {
+class SigninCustomForm extends StatefulWidget {
   @override
-  UsernameCustomFormState createState() {
-    return UsernameCustomFormState();
+  SigninCustomFormState createState() {
+    return SigninCustomFormState();
   }
 }
 
-class UsernameCustomFormState extends State<UsernameCustomForm> {
+class SigninCustomFormState extends State<SigninCustomForm> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -19,10 +19,20 @@ class UsernameCustomFormState extends State<UsernameCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Text('Email:'),
           TextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter some text';
+                return 'Please enter Email';
+              }
+              return null;
+            },
+          ),
+          Text('Password:'),
+          TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter Password';
               }
               return null;
             },
