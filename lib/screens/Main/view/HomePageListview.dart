@@ -23,27 +23,30 @@ class HomeViewStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
-    return ListView(
-      scrollDirection: Axis.vertical,
-      controller: controller,
-      children: [
-        Container(
-          height: 300,
-          child: Text('Item One'),
-        ),
-        Container(
-          height: 300,
-          child: Text('Item Two'),
-        ),
-        Container(
-          height: 300,
-          child: Text('Item Three'),
-        ),
-        Container(
-          height: 300,
-          child: Text('Item Four'),
-        ),
-      ],
+    return Container(
+      color: Colors.grey[800],
+      child: ListView(
+        scrollDirection: Axis.vertical,
+        controller: controller,
+        children: [
+          Container(
+            height: 300,
+            child: Text('Item One'),
+          ),
+          Container(
+            height: 300,
+            child: Text('Item Two'),
+          ),
+          Container(
+            height: 300,
+            child: Text('Item Three'),
+          ),
+          Container(
+            height: 300,
+            child: Text('Item Four'),
+          ),
+        ],
+      ),
     );
   }
 }

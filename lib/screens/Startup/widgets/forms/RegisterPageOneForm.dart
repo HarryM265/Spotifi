@@ -26,7 +26,9 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
             cursorColor: Colors.black,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Email';
+                return 'This field is required';
+              } else if (!value.contains('@')) {
+                return "Email must contain '@' sybmol";
               }
               return null;
             },
@@ -37,7 +39,9 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Email';
+                return 'This field is required';
+              } else if (!value.contains('@')) {
+                return "Email must contain '@' sybmol";
               }
               return null;
             },
@@ -48,7 +52,9 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Password';
+                return 'This field is required';
+              } else if (value.length < 8) {
+                return 'Password should have atleast 8 characters';
               }
               return null;
             },
@@ -59,7 +65,9 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Password';
+                return 'This field is required';
+              } else if (value.length < 8) {
+                return 'Password should have atleast 8 characters';
               }
               return null;
             },

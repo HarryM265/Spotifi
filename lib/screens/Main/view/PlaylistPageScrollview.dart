@@ -23,15 +23,18 @@ class PlaylistviewStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
-    return PageView(
-      scrollDirection: Axis.vertical,
-      controller: controller,
-      children: [
-        Text('Item One'),
-        Text('Item Two'),
-        Text('Item Three'),
-        Text('Item Four'),
-      ],
+    return Container(
+      color: Colors.grey[800],
+      child: PageView(
+        scrollDirection: Axis.vertical,
+        controller: controller,
+        children: [
+          Text('Item One'),
+          Text('Item Two'),
+          Text('Item Three'),
+          Text('Item Four'),
+        ],
+      ),
     );
   }
 }

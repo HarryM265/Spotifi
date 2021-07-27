@@ -25,7 +25,7 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Username';
+                return 'This field is required';
               }
               return null;
             },
@@ -36,7 +36,11 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter DOB';
+                return 'This field is required';
+              } else if (value.length < 10) {
+                return 'Incorrect Syntax';
+              } else if (value.length > 10) {
+                return 'Incorrect Syntax';
               }
               return null;
             },
@@ -47,7 +51,7 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Name';
+                return 'This field is required';
               }
               return null;
             },
@@ -58,7 +62,7 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter Name';
+                return 'This field is required';
               }
               return null;
             },

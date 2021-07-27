@@ -7,26 +7,23 @@ class ButtonNavigationSigninView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height * 0.2,
-        child: Center(
-          child: Column(
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    //adding navigation to Sign in Page
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SigninPage();
-                      },
-                    ),
-                  );
-                },
-                child: Text('Sign in'),
-              ),
-            ],
-          ),
-        ));
+      height: 60,
+      //width: 120,
+      width: MediaQuery.of(context).size.width * 0.4,
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            //adding navigation to Sign in Page
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return SigninPage();
+              },
+            ),
+          );
+        },
+        child: Text('Sign in'),
+      ),
+    );
   }
 }

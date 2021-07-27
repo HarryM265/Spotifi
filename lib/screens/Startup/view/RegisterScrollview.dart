@@ -42,7 +42,7 @@ class _RegisterViewStatelessWidgetState
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
     return Container(
-        height: double.infinity,
+        color: Colors.grey[800],
         child: Column(
           children: [
             Container(

@@ -1,5 +1,6 @@
 // Create a Form widget.
 import 'package:flutter/material.dart';
+import 'package:spotifi/screens/Main/view/TabBarWidget.dart';
 
 class SigninCustomForm extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class SigninCustomFormState extends State<SigninCustomForm> {
             ),
             validator: (value) {
               if (value!.isEmpty) {
-                return 'Password is required';
+                return 'Please enter Password';
               } else if (value.length < 8) {
                 return 'Password should have atleast 8 characters';
               }
@@ -52,6 +53,17 @@ class SigninCustomFormState extends State<SigninCustomForm> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text('Submition Complete!'),
+                    ),
+                  );
+                }
+                if (Signin_formKey.currentState!.validate()) {
+                  Navigator.push(
+                    //adding navigation to PageTwo
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return TabBarWidget();
+                      },
                     ),
                   );
                 }
