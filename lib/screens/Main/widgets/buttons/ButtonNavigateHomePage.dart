@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifi/screens/Main/view/HomePage.dart';
+import 'package:spotifi/screens/Main/view/TabBarWidget.dart';
 
 class ButtonNavigateHomePage extends StatelessWidget {
   const ButtonNavigateHomePage({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class ButtonNavigateHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return HomePage();
+                        return TabBarWidget();
                       },
                     ),
                   );

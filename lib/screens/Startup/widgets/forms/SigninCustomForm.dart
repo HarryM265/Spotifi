@@ -9,6 +9,7 @@ class SigninCustomForm extends StatefulWidget {
 }
 
 class SigninCustomFormState extends State<SigninCustomForm> {
+  // ignore: non_constant_identifier_names
   final Signin_formKey = GlobalKey<FormState>();
 
   @override
@@ -19,8 +20,10 @@ class SigninCustomFormState extends State<SigninCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Text('Email:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Email',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Email';
@@ -28,11 +31,15 @@ class SigninCustomFormState extends State<SigninCustomForm> {
               return null;
             },
           ),
-          Text('Password:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Password',
+            ),
             validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter Password';
+              if (value!.isEmpty) {
+                return 'Password is required';
+              } else if (value.length < 8) {
+                return 'Password should have atleast 8 characters';
               }
               return null;
             },

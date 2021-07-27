@@ -9,6 +9,7 @@ class RegisterPageTwoCustomForm extends StatefulWidget {
 }
 
 class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
+  // ignore: non_constant_identifier_names
   final RegisterTwo_formKey = GlobalKey<FormState>();
 
   @override
@@ -18,8 +19,10 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Username:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Username',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Username';
@@ -27,8 +30,10 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
               return null;
             },
           ),
-          Text('Date of Birth:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: "Date of Birth 'DD/MM/YYYY'",
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter DOB';
@@ -36,8 +41,10 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
               return null;
             },
           ),
-          Text('First Name:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'First Name',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Name';
@@ -45,8 +52,10 @@ class RegisterPageTwoCustomFormState extends State<RegisterPageTwoCustomForm> {
               return null;
             },
           ),
-          Text('Last Name:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Last Name',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Name';

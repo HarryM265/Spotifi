@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifi/screens/Main/widgets/ButtonNavigateHomePage.dart';
+import 'package:spotifi/screens/Main/widgets/buttons/ButtonNavigateHomePage.dart';
 import 'package:spotifi/screens/Startup/widgets/ButtonNavigateRegisterview.dart';
 import 'package:spotifi/screens/Startup/widgets/ButtonNavigateSigninview.dart';
 

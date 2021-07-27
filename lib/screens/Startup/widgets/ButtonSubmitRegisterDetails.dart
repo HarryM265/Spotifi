@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotifi/screens/Startup/view/SigninPage.dart';
+import 'package:spotifi/screens/Main/view/TabBarWidget.dart';
 
 class ButtonSubmitRegisterDetails extends StatelessWidget {
   const ButtonSubmitRegisterDetails({Key? key}) : super(key: key);
@@ -11,13 +11,17 @@ class ButtonSubmitRegisterDetails extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Submition Complete!'),
+              Navigator.push(
+                //adding navigation to Main Startup Page
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return TabBarWidget();
+                  },
                 ),
               );
             },
-            child: Text('Submit Account Details'),
+            child: Text('Continue to Home Page'),
           ),
         ],
       ),

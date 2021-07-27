@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spotifi/screens/Startup/widgets/ButtonNavigationMainStartupPage.dart';
 
-class TopMenuWidget extends StatelessWidget {
-  const TopMenuWidget({Key? key}) : super(key: key);
+class StartupBackButton extends StatelessWidget {
+  const StartupBackButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -9,6 +9,7 @@ class RegisterPageOneCustomForm extends StatefulWidget {
 }
 
 class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
+  // ignore: non_constant_identifier_names
   final RegisterOne_formKey = GlobalKey<FormState>();
 
   @override
@@ -18,8 +19,11 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('Email:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Email',
+            ),
+            cursorColor: Colors.black,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Email';
@@ -27,8 +31,10 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
               return null;
             },
           ),
-          Text('Email Again:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Email Again',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Email';
@@ -36,8 +42,10 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
               return null;
             },
           ),
-          Text('Password:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Password',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Password';
@@ -45,8 +53,10 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
               return null;
             },
           ),
-          Text('Password Again:'),
           TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Password Again',
+            ),
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter Password';
@@ -61,7 +71,7 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
                 if (RegisterOne_formKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text('Storing Data!'),
+                      content: Text('Submition Complete!'),
                     ),
                   );
                 }

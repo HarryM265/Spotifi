@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotifi/screens/Startup/widgets/TopMenuWidget.dart';
+import 'package:spotifi/screens/Startup/widgets/BottomNavBar.dart';
+import 'package:spotifi/screens/Startup/widgets/StartupBackButton.dart';
 import 'package:spotifi/screens/Startup/widgets/forms/RegisterPageOneForm.dart';
 
 class RegisterPageOne extends StatelessWidget {
@@ -14,7 +15,7 @@ class RegisterPageOne extends StatelessWidget {
         scrollDirection: Axis.vertical,
         controller: controller,
         children: [
-          TopMenuWidget(),
+          StartupBackButton(),
           RegisterPageOneCustomForm(),
         ],
       ),
