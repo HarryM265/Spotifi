@@ -16,8 +16,8 @@ class RegisterPageOneCustomFormState extends State<RegisterPageOneCustomForm> {
   Widget build(BuildContext context) {
     return Form(
       key: RegisterOne_formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        shrinkWrap: true,
         children: <Widget>[
           TextFormField(
             decoration: InputDecoration(

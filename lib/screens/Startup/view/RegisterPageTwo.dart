@@ -7,14 +7,16 @@ class RegisterPageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
-    return Container(
-      padding: EdgeInsets.all(20),
-      child: ListView(
-        scrollDirection: Axis.vertical,
-        controller: controller,
-        children: [
-          RegisterPageTwoCustomForm(),
-        ],
+    return Scaffold(
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          controller: controller,
+          children: [
+            RegisterPageTwoCustomForm(),
+          ],
+        ),
       ),
     );
   }

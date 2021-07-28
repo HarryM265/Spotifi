@@ -6,13 +6,15 @@ class RegisterPageThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text('Thankyou for joining Spotifi!'),
-          ButtonSubmitRegisterDetails(),
-        ],
+    return Scaffold(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text('Thankyou for joining Spotifi!'),
+            ButtonSubmitRegisterDetails(),
+          ],
+        ),
       ),
     );
   }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:spotifi/screens/Main/view/HomePageListview.dart';
 import 'package:spotifi/screens/Main/view/PlaylistPageScrollview.dart';
 
+import 'HomePage.dart';
+
 class TabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,32 +19,66 @@ class TabBarWidget extends StatelessWidget {
           bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      home: DefaultTabController(
-        length: 4,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).accentColor,
-            bottom: TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.home_filled)),
-                Tab(icon: Icon(Icons.library_music_rounded)),
-                Tab(icon: Icon(Icons.account_circle)),
-                Tab(icon: Icon(Icons.menu_rounded)),
-              ],
+      home: Scaffold(
+        body: DefaultTabController(
+          length: 4,
+          child: CustomScrollView(slivers: <Widget>[
+            SliverAppBar(
+              title: Text('Spotifii'),
+              backgroundColor: Colors.green,
+              pinned: true,
+              floating: false,
+              snap: false,
+              flexibleSpace: FlexibleSpaceBar(),
             ),
-            title: Text('Welcome Home'),
-          ),
-          body: TabBarView(
-            children: [
-              //Will eventually be each home screen
-              HomePageListview(), // Should be HomePage (attempting to make top menu)
-              PlaylistPageScrollview(),
-              Icon(Icons.account_circle),
-              Icon(Icons.menu_rounded),
-            ],
-          ),
+            SliverPersistentHeader(
+                delegate: _SliverAppBarDelegate(
+              TabBar(
+                tabs: [
+                  Tab(icon: Icon(Icons.home_filled)),
+                  Tab(icon: Icon(Icons.library_music_rounded)),
+                  Tab(icon: Icon(Icons.account_circle)),
+                  Tab(icon: Icon(Icons.menu_rounded)),
+                ],
+              ),
+            )),
+            SliverFillRemaining(
+              child: TabBarView(
+                children: [
+                  HomePage(), // Should be HomePage (attempting to make top menu)
+                  PlaylistPageScrollview(),
+                  Icon(Icons.account_circle),
+                  Icon(Icons.menu_rounded),
+                ],
+              ),
+            ),
+          ]),
         ),
       ),
     );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  _SliverAppBarDelegate(this._tabBar);
+
+  final TabBar _tabBar;
+
+  @override
+  double get minExtent => _tabBar.preferredSize.height;
+  @override
+  double get maxExtent => _tabBar.preferredSize.height;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return new Container(
+      child: _tabBar,
+    );
+  }
+
+  @override
+  bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
+    return false;
   }
 }

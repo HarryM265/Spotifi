@@ -7,11 +7,41 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final PageController controller = PageController(initialPage: 0);
     return Container(
-      child: Column(
+      padding: EdgeInsets.all(15),
+      child: ListView(
+        shrinkWrap: true,
         children: [
-          TopMenuWidget(),
-          HomePageListview(),
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Featured',
+                  style: TextStyle(color: Colors.white),
+                ),
+                Row(
+                  children: [
+                    SingleChildScrollView(
+                      controller: controller,
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    width: 20.0, color: Colors.pink)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );

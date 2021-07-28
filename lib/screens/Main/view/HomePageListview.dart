@@ -10,7 +10,9 @@ class HomePageListview extends StatelessWidget {
     return MaterialApp(
       title: HomePageListview_title,
       home: Scaffold(
-        body: const HomeViewStatelessWidget(),
+        body: Container(
+          child: HomeViewStatelessWidget(),
+        ),
       ),
     );
   }
@@ -24,10 +26,12 @@ class HomeViewStatelessWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final PageController controller = PageController(initialPage: 0);
     return Container(
+      height: MediaQuery.of(context).size.height,
       color: Colors.grey[800],
       child: ListView(
         scrollDirection: Axis.vertical,
         controller: controller,
+        shrinkWrap: true,
         children: [
           Container(
             height: 300,
