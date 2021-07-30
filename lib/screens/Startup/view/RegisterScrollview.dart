@@ -26,6 +26,7 @@ class RegisterScrollview extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.purple[300],
           title: const Text(
             RegisterScrollview_title,
           ),

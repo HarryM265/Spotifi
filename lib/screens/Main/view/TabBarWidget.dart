@@ -25,7 +25,7 @@ class TabBarWidget extends StatelessWidget {
           child: CustomScrollView(slivers: <Widget>[
             SliverAppBar(
               title: Text('Spotifii'),
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.purple[300],
               pinned: true,
               floating: false,
               snap: false,

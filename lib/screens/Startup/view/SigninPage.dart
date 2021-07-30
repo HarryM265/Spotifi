@@ -24,7 +24,7 @@ class SigninPage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           //backgroundColor: Theme.of(context).accentColor,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.purple[300],
           title: const Text(
             SigninPage_title,
           ),

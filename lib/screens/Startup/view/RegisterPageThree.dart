@@ -8,12 +8,24 @@ class RegisterPageThree extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text('Thankyou for joining Spotifi!'),
-            ButtonSubmitRegisterDetails(),
-          ],
+        color: Colors.grey[800],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * 0.4,
+                padding: EdgeInsets.all(40),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/icon.png'),
+                  ),
+                ),
+              ),
+              Text('Thankyou for joining Spotifi!'),
+              ButtonSubmitRegisterDetails(),
+            ],
+          ),
         ),
       ),
     );

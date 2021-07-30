@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotifi/screens/Main/widgets/PlaylistPageLayoutWidget.dart';
 
 class PlaylistPageScrollview extends StatelessWidget {
   const PlaylistPageScrollview({Key? key}) : super(key: key);
@@ -29,6 +30,7 @@ class PlaylistviewStatelessWidget extends StatelessWidget {
         scrollDirection: Axis.vertical,
         controller: controller,
         children: [
+          PlaylistPageLayoutWidget(),
           Text('Item One'),
           Text('Item Two'),
           Text('Item Three'),

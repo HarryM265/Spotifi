@@ -10,6 +10,7 @@ class RegisterPageOne extends StatelessWidget {
     final PageController controller = PageController(initialPage: 0);
     return Scaffold(
       body: Container(
+        color: Colors.grey[800],
         padding: EdgeInsets.all(20),
         child: ListView(
           scrollDirection: Axis.vertical,
